@@ -1,0 +1,94 @@
+#include <iostream>
+#include <vector>
+
+int ejercicio_1a(vector<vector<int>> matrizAn){
+ 
+
+	int sumaOut = 0;
+
+	int i = 0;
+
+	std::vector<int>::iterator it2;
+
+	for(std::vector<vector<int>>::iterator it = matrizAn.begin() ; it != matrizAn.end(); ++it){
+
+		it2 = (*it).begin();
+		it2+= i;
+ 
+		for (;it2 != (*it).end();++it2){
+
+			sumaOut += (*it2);
+		}
+
+		i++;
+
+	}
+
+	return sumaOut;
+
+}
+
+int ejercicio_2a(vector<vector<int>> matrizAn){
+
+	int i = 0;
+
+	int operacionesMinimas = 0;
+	int sumaOut = 0;
+	std::vector<int>::iterator it2;
+
+	for(std::vector<vector<int>>::iterator it = matrizAn.begin() ; it != matrizAn.end(); ++it){
+
+		it2 = (*it).begin();
+		it2+= i;
+		operacionesMinimas += 2;
+ 
+		for (;it2 != (*it).end();++it2){
+
+			sumaOut += (*it2);
+			operacionesMinimas += 2;
+		}
+
+		i++;
+
+	}
+
+
+	return operacionesMinimas;
+}
+
+vector<vector<int>> creadorMatricesTriangulares(int n){
+
+    	vector<vector<int>> vect;
+
+    	vector<int> vect2;
+
+	int p = 0;
+	
+	for(int i = 0; i < n; i++){
+
+		for(int j = 0; j < n; j++){
+			vect2.insert(vect2.begin(), 0);
+		vect2.empty();		
+			
+	}
+
+	int c = 0;
+	std::vector<int>::iterator it2;
+
+	for(std::vector<vector<int>>::iterator it = vect.begin() ; it != vect.end(); ++it){
+
+		it2 = (*it).begin();
+		it2+= c;
+ 
+		for (;it2 != (*it).end();++it2){
+
+			(*it2) = 1;
+		}
+
+		c++;
+
+	}
+
+	return vect;
+}
+
